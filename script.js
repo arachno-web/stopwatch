@@ -107,7 +107,7 @@ playClickSound(); // 👈 Call sound function
 resetBtn.addEventListener('click', () => {
     if (elapsedTime === 0) return;
 
-    const confirmReset = confirm("Kya aap pakka timer reset aur delete karna chahte hain?");
+    const confirmReset = confirm("Are you sure you want to reset the timer?")
     if (confirmReset) {
         clearInterval(timer);
         isRunning = false;
