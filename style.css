@@ -256,3 +256,26 @@ body.fullscreen-active .ms-display {
     bottom: 20%;
     right: 25%;
 }
+/* Responsive Fix for Mobile Fullscreen & Portrait Mode */
+@media screen and (max-width: 600px) {
+  #app-container:fullscreen,
+  #app-container:-webkit-full-screen {
+    width: 100vw !important;
+    height: 100vh !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+
+  /* Reduce font size so full timer fits on mobile screen */
+  .timer-display, 
+  #display,
+  div[class*="timer"] { 
+    font-size: 11vw !important; 
+    max-width: 100%;
+    word-break: break-all;
+    text-align: center;
+  }
+}
