@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch ⏱️</title>
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+    <div class="background-orb orb-1"></div>
+<div class="background-orb orb-2"></div>
+
+
+       <div class="container" id="app-container">
+        <!-- Top Controls (Theme & Fullscreen) -->
+        <div class="top-bar">
+            <button id="fullscreen-btn" class="btn-icon">📺 Fullscreen</button>
+            <button id="theme-toggle" class="btn-theme">Light Mode</button>
+        </div>
+
+        <!-- Stopwatch Display -->
+        <div class="timer-display" id="timer-box">
+            <span id="main-time">00:00:00</span>.<span id="ms-time" class="ms-display">00</span>
+        </div>
+
+
+        <!-- Action Buttons -->
+        <div class="controls">
+            <button id="startStopBtn" class="btn start">Start</button>
+            <button id="lapBtn" class="btn lap" disabled>Lap</button>
+            <button id="resetBtn" class="btn reset">Reset</button>
+        </div>
+
+        <!-- Saved Timer Restore Alert -->
+        <div id="restore-msg" class="restore-msg hidden">
+            <span>Want To Restore Last Timer?</span>
+            <button id="restore-yes">Yupp</button>
+            <button id="restore-no">Nope</button>
+        </div>
+
+        <!-- Laps History -->
+        <div class="laps-container">
+            <h3>Lap Times ⏱️</h3>
+            <ul id="lapsList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js')
+      .then(() => console.log('Service Worker Registered! 🚀'))
+      .catch((err) => console.log('Service Worker Error:', err));
+  }
+</script>
+
+</body>
+</html>
